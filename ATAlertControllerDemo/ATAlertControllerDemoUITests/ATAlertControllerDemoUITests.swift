@@ -29,6 +29,32 @@ class ATAlertControllerDemoUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Single Buttom"]/*[[".buttons[\"Single Buttom\"].staticTexts[\"Single Buttom\"]",".staticTexts[\"Single Buttom\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let elementsQuery = app.alerts["Title"].scrollViews.otherElements
+        elementsQuery.buttons["OK"].tap()
+        app.buttons["Multiple Button"].tap()
+        elementsQuery.buttons["Accept"].tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Multiple Button"]/*[[".buttons[\"Multiple Button\"].staticTexts[\"Multiple Button\"]",".staticTexts[\"Multiple Button\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let cancelButton = elementsQuery.buttons["Cancel"]
+        cancelButton.tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Alert + TextField"]/*[[".buttons[\"Alert + TextField\"].staticTexts[\"Alert + TextField\"]",".staticTexts[\"Alert + TextField\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        cancelButton.tap()
+        
+        let actionButton = app.buttons["Action"]
+        actionButton.tap()
+        
+        let elementsQuery2 = app.sheets["Title"].scrollViews.otherElements
+        elementsQuery2.buttons["Google Maps"].tap()
+        actionButton.tap()
+        elementsQuery2.buttons["Apple Maps"].tap()
+        actionButton.tap()
+        elementsQuery2.buttons["Cancel"].tap()
+                
+                
     }
 
 }
