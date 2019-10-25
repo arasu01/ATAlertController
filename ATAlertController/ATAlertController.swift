@@ -13,7 +13,7 @@ import UIKit
 ///Use Alert or ActionSheet instead
 public class ATAlertController {
 	///UIAlertActions callback
-    public typealias actionHandler = (UIAlertAction!) -> Void
+    public typealias actionHandler = (UIAlertAction?) -> Void
     
     ///Internal alert controller to present to the user
     internal var alertController: UIAlertController
